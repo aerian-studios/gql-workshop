@@ -1,0 +1,78 @@
+scalar DateTime
+
+interface Person {
+  id: ID!
+  age: Int
+  name: String
+  hobbies: [String]
+  friends: [Person]
+  address: [Address]
+}
+
+type Human implements Person {
+  eyeColour: String
+  friends: [Person]
+  id: ID!
+  age: Int
+  name: String
+  hobbies: [String]
+  address: [Address]
+}
+
+type Tree implements Person {
+  evergreen: Boolean
+  id: ID!
+  age: Int
+  name: String
+  hobbies: [String]
+  friends: [Person]
+  address: [Address]
+}
+
+type Jellyfish implements Person {
+  symbiotes: [Person!]
+  id: ID!
+  age: Int
+  name: String
+  hobbies: [String]
+  friends: [Person]
+  address: [Address]
+}
+
+scalar AddressUnit
+type Address {
+  id: ID!
+  unitNameOrNumber: AddressUnit
+  streetName: String
+  city: String
+  neighbourhood: Neighbourhood!
+  location: LatLong!
+  country: Country
+}
+
+type Neighbourhood {
+  id: ID!
+  name: String
+  boundary: GeoShape!
+}
+
+type GeoShape {
+  id: ID!
+  points: [LatLong!]!
+}
+
+type LatLong {
+  id: ID!
+  lat: Float!
+  long: Float!
+}
+
+enum Country {
+  NEVERLAND
+  OZ
+  ETERNIA
+}
+
+type Query {
+  people: [Person]
+}

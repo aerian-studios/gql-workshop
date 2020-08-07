@@ -1,0 +1,21 @@
+{
+  "name": "gql-workshop",
+  "version": "1.0.0",
+  "description": "gql from scratch",
+  "main": "index.js",
+  "scripts": {
+    "server": "node ./server/index.js",
+    "test": "test"
+  },
+  "keywords": [
+    "graphql"
+  ],
+  "author": "sunya.dickman@aerian.com",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "apollo-server": "^2.16.1",
+    "glob": "^7.1.6",
+    "graphql": "^15.3.0"
+  }
+}
